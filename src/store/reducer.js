@@ -24,7 +24,7 @@ export default (state = defaultState, action) => {
             });
         case DELETE_TODO_ITEM:
             return Object.assign({}, state, { 
-                list: state.list.filter((item, index) => index !== action.value)
+                list: state.list.filter((item, index) => index !== action.index)
             });
         default:
             return state;
