@@ -1,9 +1,10 @@
-import axios from 'axios';
+// import axios from 'axios';
 import {
     CHANGE_INPUT_VALUE,
     ADD_TODO_ITEM,
     DELETE_TODO_ITEM,
     INIT_LIST_ACTION,
+    GET_INIT_LIST,
   } from './actionTypes';
 
 export const getInputChangeAction = (value) => ({
@@ -25,15 +26,6 @@ export const initListAction = (data) => ({
     data
 });
 
-export const getTodoList = () => {
-    return async (dispatch) => {
-        // try {
-            const { data } = await axios.get('/api/todolist');
-            const action = initListAction(data);
-            dispatch(action);
-            console.log(action);
-        //   } catch (error) {
-        //     throw new Error(error);
-        //   }
-    }
-}
+export const getInitList = () => ({
+    type: GET_INIT_LIST,
+})

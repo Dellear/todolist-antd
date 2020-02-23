@@ -6,7 +6,7 @@ import {
 } from './actionTypes';
 
 const defaultState = {
-    inputValue: 'fdsfsd',
+    inputValue: '',
     list: []
 };
 
