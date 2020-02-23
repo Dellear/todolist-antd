@@ -27,13 +27,13 @@ export const initListAction = (data) => ({
 
 export const getTodoList = () => {
     return async (dispatch) => {
-        try {
+        // try {
             const { data } = await axios.get('/api/todolist');
             const action = initListAction(data);
             dispatch(action);
             console.log(action);
-          } catch (error) {
-            throw new Error(error);
-          }
+        //   } catch (error) {
+        //     throw new Error(error);
+        //   }
     }
 }
