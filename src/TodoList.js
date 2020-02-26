@@ -15,24 +15,26 @@ import {
 class TodoList extends Component {
   // 组件渲染
   render() {
+    const { inputValue, handleInputChange, handleBtnClick, list, handleItemDelete } = this.props;
+
     return (
       <div style={{ margin: '10px 20px' }}>
         <div>
           <h2>TodoList</h2>
           <Input
             placeholder="please enter..."
-            value={this.props.inputValue}
+            value={inputValue}
             style={{ width: '300px', marginRight: '20px' }}
-            onChange={this.props.handleInputChange}
+            onChange={handleInputChange}
           />
-          <Button type="primary" onClick={this.props.handleBtnClick}>提交</Button>
+          <Button type="primary" onClick={handleBtnClick}>提交</Button>
         </div>
         <List
           style={{ width: '400px', marginTop: '10px' }}
           bordered
-          dataSource={this.props.list}
+          dataSource={list}
           renderItem={(item, index) => (
-            <List.Item onClick={() => { this.props.handleItemDelete(index) }}>
+            <List.Item onClick={() => { handleItemDelete(index) }}>
               <div>{item}</div>
             </List.Item>
           )}
